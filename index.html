@@ -8,20 +8,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Weather Dashboard</h1>
-        <form>
-            <label for="city-input">Enter a City:</label>
-            <input type="text" id="city-input">
-            <button type="submit" id="search-button">Search</button>
-        </form>
+      <h1>Weather Dashboard</h1>
     </header>
-
+  
+    <!-- Main Section -->
     <main>
-        <section id="current-weather"></section>
-        <section id="forecast"></section>
+      <!-- Search Bar -->
+      <section id="search-bar">
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Enter a city">
+          <button type="submit" id="search-button">Search</button>
+        </form>
+        <ul id="search-history"></ul>
+      </section>
+  
+      <!-- Current Weather Section -->
+      <section id="current-weather">
+        <h2>Current Weather</h2>
+        <div id="weather-info">
+          <img id="weather-icon" alt="">
+          <div id="weather-data">
+            <h3 id="city-name"></h3>
+            <p id="date"></p>
+            <p id="temperature"></p>
+            <p id="humidity"></p>
+            <p id="wind-speed"></p>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Forecast Section -->
+      <section id="forecast">
+        <h2>5-Day Forecast</h2>
+        <div id="forecast-cards"></div>
+      </section>
     </main>
-
+  
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

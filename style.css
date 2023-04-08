@@ -50,9 +50,28 @@ header {
     cursor: pointer;
   }
 
-/* TODO: Add styles for current weather section */
+/* Add styles for current weather section */
 #current-weather {
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+#current-weather img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+#current-weather p {
+  font-size: 20px;
+  margin: 5px 0;
 }
 
 /* TODO: Add styles for forecast section */

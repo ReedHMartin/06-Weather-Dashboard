@@ -74,10 +74,28 @@ header {
   margin: 5px 0;
 }
 
-/* TODO: Add styles for forecast section */
+/* Add styles for forecast section */
 #forecast {
-  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  overflow: auto;
 }
+
+#forecast .forecast-day {
+  text-align: center;
+}
+
+#forecast img {
+  width: 50px;
+  height: 50px;
+}
+
 
 /* TODO: Add media queries for responsive design */
 @media only screen and (max-width: 768px) {

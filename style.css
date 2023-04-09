@@ -97,7 +97,18 @@ header {
 }
 
 
-/* TODO: Add media queries for responsive design */
+/* Add media queries for responsive design */
 @media only screen and (max-width: 768px) {
-  
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #search-bar {
+    margin-bottom: 20px;
+  }
+
+  #forecast {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

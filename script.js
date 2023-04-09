@@ -61,7 +61,7 @@ function displayCurrentWeather(data) {
 }
 
 
-// TODO: Create function to handle form submission
+// Create function to handle form submission
 function handleFormSubmit(event) {
   event.preventDefault();
 
@@ -72,11 +72,24 @@ function handleFormSubmit(event) {
   if (searchValue) {
     city = searchValue;
     getWeatherData(city);
-  }};
+
+    // Update search history
+    const searchItemEl = document.createElement("li");
+    searchItemEl.textContent = city;
+    searchItemEl.classList.add("search-item");
+    searchItemEl.addEventListener("click", () => {
+      city = searchItemEl.textContent;
+      getWeatherData(city);
+    });
+    searchHistoryEl.appendChild(searchItemEl);
+
+    // Clear search input
+    searchInputEl.value = "";
+  }
+}
 
 
-
-// TODO: Add event listener to form submit button
+// Add event listener to form submit button
 document
   .getElementById("search-button")
   .addEventListener("click", handleFormSubmit);

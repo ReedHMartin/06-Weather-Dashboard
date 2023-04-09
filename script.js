@@ -63,8 +63,18 @@ function displayCurrentWeather(data) {
 
 // TODO: Create function to handle form submission
 function handleFormSubmit(event) {
-  
-}
+  event.preventDefault();
+
+  const searchInputEl = document.getElementById("search-input");
+  const searchHistoryEl = document.getElementById("search-history");
+  const searchValue = searchInputEl.value.trim();
+
+  if (searchValue) {
+    city = searchValue;
+    getWeatherData(city);
+  }};
+
+
 
 // TODO: Add event listener to form submit button
 document

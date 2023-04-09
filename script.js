@@ -12,24 +12,11 @@ function getWeatherData(city) {
     .catch(error => {
       console.log("Error:", error);
     });
-}
 
-function displayCurrentWeather(data) {
-  const cityNameEl = document.getElementById("city-name");
-  const temperatureEl = document.getElementById("temperature");
-  const humidityEl = document.getElementById("humidity");
-  const windSpeedEl = document.getElementById("wind-speed");
+  const forecastEl = document.getElementById("forecast");
+  const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
-  
-  cityNameEl.textContent = data.name;
-  temperatureEl.textContent = `${Math.round(data.main.temp)}°F`;
-  humidityEl.textContent = `${data.main.humidity}%`;
-  windSpeedEl.textContent = `${Math.round(data.wind.speed)} mph`;
-}
-
-  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
-
-  fetch(apiUrl)
+  fetch(forecastApiUrl)
     .then(response => response.json())
     .then(data => {
       const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00"));
@@ -58,6 +45,20 @@ function displayCurrentWeather(data) {
     .catch(error => {
       console.log("Error:", error);
     });
+}
+
+function displayCurrentWeather(data) {
+  const cityNameEl = document.getElementById("city-name");
+  const temperatureEl = document.getElementById("temperature");
+  const humidityEl = document.getElementById("humidity");
+  const windSpeedEl = document.getElementById("wind-speed");
+
+  
+  cityNameEl.textContent = data.name;
+  temperatureEl.textContent = `${Math.round(data.main.temp)}°F`;
+  humidityEl.textContent = `${data.main.humidity}%`;
+  windSpeedEl.textContent = `${Math.round(data.wind.speed)} mph`;
+}
 
 
 // TODO: Create function to handle form submission
